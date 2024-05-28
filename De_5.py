@@ -39,6 +39,13 @@ def dang_duong(x):
     plt.grid(True)
     plt.show()
 
+def dang_cot(x, y):
+    plt.bar(x, y,color="r", linestyle='-')
+    plt.title("Bieu do cot")
+    plt.xlabel("Cot x")
+    plt.ylabel("Cot y")
+    plt.grid(True)
+    plt.show()
 
 a, b = nhap_mang()
 print(a)
@@ -50,3 +57,8 @@ b = np.sort(b)[::-1]
 print(np.concatenate((a, b)))
 dang_mieng(a)
 dang_duong(b)
+dang_cot(a, b)
+
+# d = b[np.logical_and(b < 100, b % 3 == 0)]
+print(b[np.logical_and(b < 100, b % 3 == 0)])
+print(sum(np.where(np.logical_and(b < 100, b % 3 == 0), b, 0)))
